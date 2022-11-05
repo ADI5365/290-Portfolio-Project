@@ -1,0 +1,221 @@
+/*  ===== MOBILE styles (reside at the top and are inherited by all devices) ===== */
+/*  ===== See tablet, desktop, and print @media queries at the bottom. */
+
+
+/*   ----- Imports  -----  */
+
+@import url(//fonts.googleapis.com/css2?family=Dosis:wght@700&display=swap);
+
+
+/*  ----- Viewport ----- elements inherited by all remaining elements ----- */
+body {
+  color: #C9E7F2;
+  font-family: Dosis, sans-serif;
+  font-size: 10px;
+  line-height: 1.4;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  vertical-align: center;
+  background-image: url(pexels.jpg);
+}
+
+p {
+  text-align: center;
+  margin: auto;
+  margin-bottom: 20px;
+  width: 100%;
+  font-size: 14pt;
+  padding: 10px;
+  max-width: 50ch;
+}
+
+
+/*  ----- Navigation ----- Override text links for navigation only.  */
+nav {
+  font-size: 20px;
+  font-weight: 800;
+  line-height: 1.5;
+  padding: 12px 16px;
+  float: center;
+  text-align: center;
+  list-style-type: none;
+}
+
+nav a {
+  color: #C9E7F2;
+  margin: 2rem;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  vertical-align: middle;
+  border-style: groove;
+  border-color: #C9E7F2;
+}
+
+nav a:hover {
+  background-color: #C9E7F2;
+  color: black;
+  cursor: pointer;
+}
+
+
+/*  ----- Page layout blocks -----  */
+header {
+  background-color: #C9E7F2;
+  color: #EC9C57;
+  text-align: center;
+  font-size: 50px;
+  border: none;
+}
+
+header p {
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+main {
+  color: #C9E7F2;
+  border: none;
+  padding: 25px;
+  float: center;
+}
+
+footer {
+  bottom: 0;
+  width: 100%;
+  background-color: #C9E7F2;
+  color: #EC9C57;
+  font-style: italic;
+  position: fixed;
+}
+
+footer p {
+  font-size: 12px;
+  padding: 0;
+  margin: auto;
+}
+
+
+/* Define consistant font family.*/
+h1, h2, h3 {
+  margin: 6;
+  padding: 6;
+  text-align: center;
+}
+
+h1 {font-size: 55px;}
+
+h2 {font-size: 20pt;}
+
+h3 {font-size: 15pt;}
+
+
+/*  ----- Table ----- */
+table {
+  border-collapse: collapse;
+  border: 3px solid #50544D;
+  text-align: center;
+  margin-left: 460px;
+  margin-bottom: 50px;
+  table-layout: fixed;
+  width: 950px;
+  background-color: #EC9C57;
+  color: #50544D;
+  padding: 10px;
+  font-size: 12pt;
+}
+
+/* caption {
+  color: #8C3B0B;
+  font-size: 15px;
+  text-decoration: underline;
+} */
+
+tr {
+  border: 5px;
+  padding: 5px;
+}
+
+tr:nth-child(odd) {
+  background-color: #d1ad73;
+}
+
+th {
+  border: 5px;
+  padding: 5px;
+  background-color: #EC9C57;
+}
+
+td {
+  border: 5px;
+  padding: 5px;
+}
+
+
+/*  ----- Form ----- */
+form {
+  padding: 0;
+  font-size: 12pt;
+  font-weight: 100;
+  color: #EC9C57;
+  background-color: #50544D;
+  vertical-align: middle;
+  border-color: #50544D;
+  border-style: groove;
+  text-align: center;
+}
+
+button {
+  border-radius: 8px;
+  border-width: 0;
+  cursor: pointer;
+  background-color: #EC9C57;
+  font-size: 12pt;
+  line-height: 20px;
+  padding: 10px 12px;
+  margin: 15px 15px;
+  font-family: Dosis;
+}
+
+button:hover {
+  background-color: #C9E7F2;
+}
+
+label {
+  padding: 10px;
+}
+
+input {
+  padding: 10px;
+  margin: 10px;
+  font-size: 16px;
+  border: 0;
+  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  font-family: Dosis;
+}
+
+input::placeholder{
+  font-weight: bold;
+  opacity: .5;
+  color: lightgray;
+}
+
+/* select {
+  padding: ;
+  font-size: ;
+  font-weight: ;
+  color: ;
+} */
+
+
+@keyframes App-logo {}
+
+/*   ===== TABLET  media query overrides mobile styles ===== */
+@media all and (min-width: 600px) {}
+
+/*   ===== DESKTOP  media query overrides mobile and tablet styles ===== */
+@media all and (min-width: 1080px) {}
+
+/*   ===== PRINT  media query overrides previous styles =====  */
+@media print {}
