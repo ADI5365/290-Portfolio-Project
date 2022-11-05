@@ -22,7 +22,7 @@ function App() {
       <Router>
 
           <header>
-            <h1>Exercise Collection</h1>
+            <h1>Collection of Exercises</h1>
             <p>Track Your Workouts Day-by-Day</p>
           </header>
 

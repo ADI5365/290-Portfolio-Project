@@ -30,7 +30,7 @@ app.post ('/exercises', (req,res) => {
 // GET movies by ID
 app.get('/exercises/:_id', (req, res) => {
     const exerciseID = req.params._id;
-    exercises.findExerciseById(exerciseID)
+    exercises.findById(exerciseID)
         .then(exercise => { 
             if (exercise !== null) {
                 res.json(exercise);
@@ -44,32 +44,9 @@ app.get('/exercises/:_id', (req, res) => {
 
 });
 
-
-// GET exercises filtered by parameter
-app.get('/exercises', (req, res) => {
-    let filter = {};
-    // filter by year
-    if(req.query.year !== undefined){
-        filter = { year: req.query.year };
-    }
-    // filter by language
-    if(req.query.language !== undefined){
-        filter = { language: req.query.language };
-    }
-    movies.findMovies(filter, '', 0)
-        .then(movies => {
-            res.send(movies);
-        })
-        .catch(error => {
-            console.error(error);
-            res.send({ Error: 'Request to retrieve documents failed' });
-        });
-
-});
-
 // DELETE Controller ******************************
-app.delete('/movies/:_id', (req, res) => {
-    movies.deleteById(req.params._id)
+app.delete('/exercises/:_id', (req, res) => {
+    exercises.deleteById(req.params._id)
         .then(deletedCount => {
             if (deletedCount === 1) {
                 res.status(204).send();
@@ -84,21 +61,25 @@ app.delete('/movies/:_id', (req, res) => {
 });
 
 // UPDATE controller ************************************
-app.put('/movies/:_id', (req, res) => {
-    movies.replaceMovie(
+app.put('/exercises/:_id', (req, res) => {
+    exercises.updateOne(
         req.params._id, 
-        req.body.title, 
-        req.body.year, 
-        req.body.language
+        req.body.name, 
+        req.body.reps, 
+        req.body.weight,
+        req.body.unit,
+        req.body.date
     )
 
     .then(numUpdated => {
         if (numUpdated === 1) {
             res.json({ 
                 _id: req.params._id, 
-                title: req.body.title, 
-                year: req.body.year, 
-                language: req.body.language 
+                name: req.body.name, 
+                reps: req.body.reps, 
+                weight: req.body.weight,
+                unit: req.body.unit,
+                date: req.body.date
             })
         } else {
             res.status(404).json({ Error: 'Document not found' });

@@ -25,7 +25,7 @@ p {
   margin: auto;
   margin-bottom: 20px;
   width: 100%;
-  font-size: 14pt;
+  font-size: 18pt;
   padding: 10px;
   max-width: 50ch;
 }
@@ -63,7 +63,7 @@ nav a:hover {
 /*  ----- Page layout blocks -----  */
 header {
   background-color: #C9E7F2;
-  color: #EC9C57;
+  color: #734A3C;
   text-align: center;
   font-size: 50px;
   border: none;
@@ -85,7 +85,7 @@ footer {
   bottom: 0;
   width: 100%;
   background-color: #C9E7F2;
-  color: #EC9C57;
+  color: #734A3C;
   font-style: italic;
   position: fixed;
 }
@@ -98,7 +98,7 @@ footer p {
 
 
 /* Define consistant font family.*/
-h1, h2, h3 {
+h1, h2 {
   margin: 6;
   padding: 6;
   text-align: center;
@@ -106,24 +106,22 @@ h1, h2, h3 {
 
 h1 {font-size: 55px;}
 
-h2 {font-size: 20pt;}
-
-h3 {font-size: 15pt;}
+h2 {font-size: 25pt;}
 
 
 /*  ----- Table ----- */
 table {
   border-collapse: collapse;
-  border: 3px solid #50544D;
+  border: 3px solid #734A3C;
   text-align: center;
   margin-left: 460px;
   margin-bottom: 50px;
   table-layout: fixed;
   width: 950px;
   background-color: #EC9C57;
-  color: #50544D;
+  color: #734A3C;
   padding: 10px;
-  font-size: 12pt;
+  font-size: 16pt;
 }
 
 /* caption {
@@ -138,7 +136,7 @@ tr {
 }
 
 tr:nth-child(odd) {
-  background-color: #d1ad73;
+  background-color: #E9B587;
 }
 
 th {
@@ -156,12 +154,12 @@ td {
 /*  ----- Form ----- */
 form {
   padding: 0;
-  font-size: 12pt;
+  font-size: 14pt;
   font-weight: 100;
-  color: #EC9C57;
-  background-color: #50544D;
+  color: #734A3C;
   vertical-align: middle;
-  border-color: #50544D;
+  border-color: #734A3C;
+  background-color: #EC9C57;
   border-style: groove;
   text-align: center;
 }
@@ -170,7 +168,7 @@ button {
   border-radius: 8px;
   border-width: 0;
   cursor: pointer;
-  background-color: #EC9C57;
+  background-color: #734A3C;
   font-size: 12pt;
   line-height: 20px;
   padding: 10px 12px;
