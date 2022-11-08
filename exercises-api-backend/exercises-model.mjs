@@ -23,8 +23,8 @@ const exerciseSchema = mongoose.Schema({
 	name: { type: String, required: true },
 	reps: { type: Number, required: true },
 	weight: { type: Number, required: true },
-    unit: { type: String, required: true },
-    date: {type: Date, required: true }
+    unit: { type: String, required: true }
+    // date: {type: Date, required: true }
 });
 
 // Compile the model from the schema.
@@ -33,13 +33,13 @@ const Exercise = mongoose.model("Exercise", exerciseSchema);
 
 // CREATE model *****************************************
 
-const createExercise = async (name, reps, weight, unit, date) => {
+const createExercise = async (name, reps, weight, unit) => {
     const exercise = new Exercise({ 
         name: name,
         reps: reps,
         weight: weight,
-        unit: unit,
-        date: date
+        unit: unit
+        // date: date
     });
     return exercise.save();
 }
@@ -47,6 +47,12 @@ const createExercise = async (name, reps, weight, unit, date) => {
 
 // RETRIEVE models *****************************************
 
+const findExercises = async (filter) => {
+    const query = Exercise.find(filter);
+    return query.exec();
+}
+
+// Retrieve based on the ID and return a promise.
 const findById = async (_id) => {
     const query = Exercise.findById(_id);
     return query.exec();
@@ -62,13 +68,13 @@ const deleteById = async (_id) => {
 
 // UPDATE model *****************************************************
 
-const updateOne = async (_id, name, reps, weight, unit, date) => {
-    const result = await Movie.replaceOne({_id: _id }, {
+const replaceExercise = async (_id, name, reps, weight, unit) => {
+    const result = await Exercise.replaceOne({_id: _id }, {
         name: name, 
         reps: reps,
         weight: weight,
-        unit: unit,
-        date: date
+        unit: unit
+        // date: date
     });
     return result.modifiedCount;
 }
@@ -76,4 +82,4 @@ const updateOne = async (_id, name, reps, weight, unit, date) => {
 
 
 // Export our variables for use in the controller file.
-export { createExercise, findById, updateOne, deleteById }
+export { createExercise, findExercises, findById, replaceExercise, deleteById }

@@ -9,7 +9,7 @@
 
 /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
 body {
-  color: #C9E7F2;
+  color: #1F72A6;
   font-family: Dosis, sans-serif;
   font-size: 10px;
   line-height: 1.4;
@@ -43,18 +43,19 @@ nav {
 }
 
 nav a {
-  color: #C9E7F2;
+  color: #736E6E;
+  background-color: #A9DDFC;
   margin: 2rem;
   text-align: center;
   padding: 12px;
   text-decoration: none;
   vertical-align: middle;
-  border-style: groove;
-  border-color: #C9E7F2;
+  border-style: inset;
+  border-color: #A9DDFC;
 }
 
 nav a:hover {
-  background-color: #C9E7F2;
+  background-color: #A9DDFC;
   color: black;
   cursor: pointer;
 }
@@ -62,8 +63,8 @@ nav a:hover {
 
 /*  ----- Page layout blocks -----  */
 header {
-  background-color: #C9E7F2;
-  color: #734A3C;
+  background-color: #A9DDFC;
+  color: #736E6E;
   text-align: center;
   font-size: 50px;
   border: none;
@@ -75,7 +76,7 @@ header p {
 }
 
 main {
-  color: #C9E7F2;
+  color: #1F72A6;
   border: none;
   padding: 25px;
   float: center;
@@ -84,8 +85,8 @@ main {
 footer {
   bottom: 0;
   width: 100%;
-  background-color: #C9E7F2;
-  color: #734A3C;
+  background-color: #A9DDFC;
+  color: #736E6E;
   font-style: italic;
   position: fixed;
 }
@@ -112,14 +113,14 @@ h2 {font-size: 25pt;}
 /*  ----- Table ----- */
 table {
   border-collapse: collapse;
-  border: 3px solid #734A3C;
+  border: 3px solid #736E6E;
   text-align: center;
   margin-left: 460px;
   margin-bottom: 50px;
   table-layout: fixed;
   width: 950px;
-  background-color: #EC9C57;
-  color: #734A3C;
+  background-color: #A9DDFC;
+  color: #736E6E;
   padding: 10px;
   font-size: 16pt;
 }
@@ -136,18 +137,20 @@ tr {
 }
 
 tr:nth-child(odd) {
-  background-color: #E9B587;
+  background-color: #74b4d8;
 }
 
 th {
   border: 5px;
   padding: 5px;
-  background-color: #EC9C57;
+  background-color: #A9DDFC;
+  text-decoration: underline;
 }
 
 td {
   border: 5px;
   padding: 5px;
+  font-size: 12pt;
 }
 
 
@@ -156,19 +159,22 @@ form {
   padding: 0;
   font-size: 14pt;
   font-weight: 100;
-  color: #734A3C;
+  color: #1F72A6;
   vertical-align: middle;
-  border-color: #734A3C;
-  background-color: #EC9C57;
+  border-color: #A9DDFC;
   border-style: groove;
   text-align: center;
+}
+
+legend {
+  color: #A9DDFC;
 }
 
 button {
   border-radius: 8px;
   border-width: 0;
   cursor: pointer;
-  background-color: #734A3C;
+  background-color: #1F72A6;
   font-size: 12pt;
   line-height: 20px;
   padding: 10px 12px;
@@ -177,7 +183,7 @@ button {
 }
 
 button:hover {
-  background-color: #C9E7F2;
+  background-color: #A9DDFC;
 }
 
 label {
@@ -189,14 +195,14 @@ input {
   margin: 10px;
   font-size: 16px;
   border: 0;
-  box-shadow: 0 0 15px 4px rgba(0, 0, 0, 0.06);
+  box-shadow: 0 0 15px 4px #736E6E;
   font-family: Dosis;
 }
 
 input::placeholder{
   font-weight: bold;
   opacity: .5;
-  color: lightgray;
+  color: #BFBCBA;
 }
 
 /* select {

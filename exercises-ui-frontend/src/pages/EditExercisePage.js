@@ -8,7 +8,7 @@ export const EditExercisePage = ({ exercise }) => {
     const [reps, setReps] = useState(exercise.reps);
     const [weight, setWeight] = useState(exercise.weight);
     const [unit, setUnit] = useState(exercise.unit);
-    const [date, setDate] = useState(exercise.date);
+    // const [date, setDate] = useState(exercise.date);
     
     const history = useHistory();
 
@@ -19,8 +19,8 @@ export const EditExercisePage = ({ exercise }) => {
                 name: name, 
                 reps: reps,
                 weight: weight,
-                unit: unit,
-                date: date
+                unit: unit
+                // date: date
             }),
             headers: {'Content-Type': 'application/json',},
         });
@@ -70,12 +70,12 @@ export const EditExercisePage = ({ exercise }) => {
                         onChange={e => setUnit(e.target.value)} 
                         id="weight" />
 
-                    <label for="date">Date Performed</label>
+                    {/* <label for="date">Date Performed</label>
                     <input
                         type="date"
                         value={date}
                         onChange={e => setDate(e.target.value)} 
-                        id="date" />
+                        id="date" /> */}
 
                     <label for="submit">
                     <button

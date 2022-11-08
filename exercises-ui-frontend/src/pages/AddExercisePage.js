@@ -7,12 +7,12 @@ export const AddExercisePage = () => {
     const [reps, setReps] = useState('');
     const [weight, setWeight] = useState('');
     const [unit, setUnit] = useState('');
-    const [date, setDate] = useState('');
+    // const [date, setDate] = useState('');
     
     const history = useHistory();
 
     const addExercise = async () => {
-        const newExercise = { name, reps, weight, unit, date };
+        const newExercise = { name, reps, weight, unit };
         const response = await fetch('/exercises', {
             method: 'post',
             body: JSON.stringify(newExercise),
@@ -73,13 +73,13 @@ export const AddExercisePage = () => {
                         id="weight"
                         required="required" />
 
-                    <label for="date">Date</label>
+                    {/* <label for="date">Date</label>
                     <input
                         type="date"
                         value={date}
                         onChange={e => setDate(e.target.value)} 
                         id="date"
-                        required="required" />
+                        required="required" /> */}
 
                     <label for="submit">
                     <button

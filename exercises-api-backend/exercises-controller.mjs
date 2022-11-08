@@ -9,12 +9,12 @@ app.use(express.json());
 
 // CREATE controller ******************************************
 app.post ('/exercises', (req,res) => { 
-    movies.createExercise(
+    exercises.createExercise(
         req.body.name, 
         req.body.reps, 
         req.body.weight,
-        req.body.unit,
-        req.body.date
+        req.body.unit
+        // req.body.date
         )
         .then(exercise => {
             res.status(201).json(exercise);
@@ -27,7 +27,7 @@ app.post ('/exercises', (req,res) => {
 
 
 // RETRIEVE controller ****************************************************
-// GET movies by ID
+// GET exercises by ID
 app.get('/exercises/:_id', (req, res) => {
     const exerciseID = req.params._id;
     exercises.findById(exerciseID)
@@ -40,6 +40,29 @@ app.get('/exercises/:_id', (req, res) => {
          })
         .catch(error => {
             res.status(400).json({ Error: 'Request to retrieve document failed' });
+        });
+
+});
+
+app.get('/exercises', (req, res) => {
+
+    let filter = {};
+
+    if(req.query.name !== undefined){
+        filter = { year: req.query.name };
+    }
+
+    // if(req.query.language !== undefined){
+    //     filter = { language: req.query.language };
+    // }
+    
+    exercises.findExercises(filter, '', 0)
+        .then(exercises => {
+            res.send(exercises);
+        })
+        .catch(error => {
+            console.error(error);
+            res.send({ Error: 'Request to retrieve documents failed' });
         });
 
 });
@@ -67,8 +90,8 @@ app.put('/exercises/:_id', (req, res) => {
         req.body.name, 
         req.body.reps, 
         req.body.weight,
-        req.body.unit,
-        req.body.date
+        req.body.unit
+        // req.body.date
     )
 
     .then(numUpdated => {
@@ -78,8 +101,8 @@ app.put('/exercises/:_id', (req, res) => {
                 name: req.body.name, 
                 reps: req.body.reps, 
                 weight: req.body.weight,
-                unit: req.body.unit,
-                date: req.body.date
+                unit: req.body.unit
+                // date: req.body.date
             })
         } else {
             res.status(404).json({ Error: 'Document not found' });
