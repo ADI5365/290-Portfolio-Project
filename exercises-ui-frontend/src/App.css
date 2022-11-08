@@ -113,7 +113,7 @@ h2 {font-size: 25pt;}
 /*  ----- Table ----- */
 table {
   border-collapse: collapse;
-  border: 3px solid #736E6E;
+  border: 3px solid #1F72A6;
   text-align: center;
   margin-left: 460px;
   margin-bottom: 50px;
@@ -125,11 +125,12 @@ table {
   font-size: 16pt;
 }
 
-/* caption {
-  color: #8C3B0B;
-  font-size: 15px;
-  text-decoration: underline;
-} */
+caption {
+  color: #1F72A6;
+  font-size: 30px;
+  margin-top: 30px;
+  border-style: ridge;
+}
 
 tr {
   border: 5px;
@@ -144,6 +145,7 @@ th {
   border: 5px;
   padding: 5px;
   background-color: #A9DDFC;
+  color: #736E6E;
   text-decoration: underline;
 }
 
@@ -161,13 +163,9 @@ form {
   font-weight: 100;
   color: #1F72A6;
   vertical-align: middle;
-  border-color: #A9DDFC;
-  border-style: groove;
   text-align: center;
-}
-
-legend {
-  color: #A9DDFC;
+  width: 600px;
+  margin-left: 625px;
 }
 
 button {
@@ -188,6 +186,7 @@ button:hover {
 
 label {
   padding: 10px;
+  display: block;
 }
 
 input {
@@ -197,6 +196,7 @@ input {
   border: 0;
   box-shadow: 0 0 15px 4px #736E6E;
   font-family: Dosis;
+  width: 250px;
 }
 
 input::placeholder{
@@ -205,12 +205,25 @@ input::placeholder{
   color: #BFBCBA;
 }
 
-/* select {
-  padding: ;
-  font-size: ;
-  font-weight: ;
-  color: ;
-} */
+select {
+  padding: 10px;
+  margin: 10px;
+  border: 0;
+  box-shadow: 0 0 15px 4px #736E6E;
+  font-size: 12pt;
+  font-weight: 100;
+  color: #1F72A6;
+  background-color: white;
+  width: 270px;
+} 
+
+.top-react-icons {
+  font-size: 16pt;
+}
+
+.top-react-icons:hover {
+  cursor: pointer;
+}
 
 
 @keyframes App-logo {}

@@ -8,7 +8,7 @@ export const EditExercisePage = ({ exercise }) => {
     const [reps, setReps] = useState(exercise.reps);
     const [weight, setWeight] = useState(exercise.weight);
     const [unit, setUnit] = useState(exercise.unit);
-    // const [date, setDate] = useState(exercise.date);
+    const [date, setDate] = useState(exercise.date);
     
     const history = useHistory();
 
@@ -19,8 +19,8 @@ export const EditExercisePage = ({ exercise }) => {
                 name: name, 
                 reps: reps,
                 weight: weight,
-                unit: unit
-                // date: date
+                unit: unit,
+                date: date
             }),
             headers: {'Content-Type': 'application/json',},
         });
@@ -38,7 +38,7 @@ export const EditExercisePage = ({ exercise }) => {
         <>
         <article>
             <h2>Edit an exercise in the collection</h2>
-            <p>Paragraph about this page.</p>
+            <p>Make changes to the details of a past workout here.</p>
             <form onSubmit={(e) => { e.preventDefault();}}>
                 <fieldset>
                     <legend>Which exercise are you editing?</legend>
@@ -64,24 +64,31 @@ export const EditExercisePage = ({ exercise }) => {
                         id="weight" />
 
                     <label for="unit">Weight Unit</label>
-                    <input
-                        type="text"
-                        value={weight}
-                        onChange={e => setUnit(e.target.value)} 
-                        id="weight" />
+                    <select
+                        value={unit}
+                        placeholder="Select weight unit"
+                        onChange={e => setUnit(e.target.value)}
+                        id="unit"
+                        required="required">
+                        
+                        <option value="lbs">lbs</option>
+                        <option value="kgs">kgs</option>
+                        <option value="miles">miles</option>
+                        <option value="kilometers">kilometers</option>
+                    </select>
 
-                    {/* <label for="date">Date Performed</label>
+                    <label for="date">Date Performed</label>
                     <input
                         type="date"
                         value={date}
                         onChange={e => setDate(e.target.value)} 
-                        id="date" /> */}
+                        id="date" />
 
                     <label for="submit">
                     <button
                         onClick={editExercise}
                         id="submit"
-                    >Save</button> updates to the collection</label>
+                    >Save</button> updates</label>
                 </fieldset>
                 </form>
             </article>

@@ -1,28 +1,25 @@
-// Import dependencies
+// import dependencie
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 import { useState } from 'react';
 
-// Import Components, styles, media
+// import components, stylesheet, and pages
 import Nav from './components/Nav';
 import './App.css';
-
-// Import Pages
 import HomePage from './pages/HomePage';
 import AddExercisePage from './pages/AddExercisePage';
 import EditExercisePage from './pages/EditExercisePage';
 
-// Define the function that renders the content in routes using State.
 function App() {
 
   const [exercise, setExercise] = useState([]);
 
   return (
-    <>
+    <div>
       <Router>
 
           <header>
-            <h1>Collection of Exercises</h1>
+            <h1>Sun's Out, Guns Out: An Exercise Collection</h1>
             <p>Track Your Workouts Day-by-Day</p>
           </header>
 
@@ -39,7 +36,7 @@ function App() {
           </footer>
 
       </Router>
-    </>
+    </div>
   );
 }
 

@@ -1,5 +1,6 @@
 import React from 'react';
-import { MdDeleteForever, MdEdit } from 'react-icons/md';
+import { MdOutlineNotInterested, MdOutlineDriveFileRenameOutline } from 'react-icons/md';
+import { IconContext } from 'react-icons';
 
 function Exercise({ exercise, onEdit, onDelete }) {
     return (
@@ -8,9 +9,12 @@ function Exercise({ exercise, onEdit, onDelete }) {
             <td>{exercise.reps}</td>
             <td>{exercise.weight}</td>
             <td>{exercise.unit}</td>
-            {/* <td>{exercise.date.substring(0,10)}</td> */}
-            <td><MdDeleteForever onClick={() => onDelete(exercise._id)} /></td>
-            <td><MdEdit onClick={() => onEdit(exercise)} /></td>
+            <td>{exercise.date.substring(0,10)}</td>
+            
+            <IconContext.Provider value={{className: 'top-react-icons'}}>
+                <td><MdOutlineNotInterested onClick={() => onDelete(exercise._id)} /></td>
+                <td><MdOutlineDriveFileRenameOutline onClick={() => onEdit(exercise)} /></td>
+            </IconContext.Provider>
         </tr>
     );
 }

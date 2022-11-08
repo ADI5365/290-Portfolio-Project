@@ -7,12 +7,12 @@ export const AddExercisePage = () => {
     const [reps, setReps] = useState('');
     const [weight, setWeight] = useState('');
     const [unit, setUnit] = useState('');
-    // const [date, setDate] = useState('');
+    const [date, setDate] = useState('');
     
     const history = useHistory();
 
     const addExercise = async () => {
-        const newExercise = { name, reps, weight, unit };
+        const newExercise = { name, reps, weight, unit, date };
         const response = await fetch('/exercises', {
             method: 'post',
             body: JSON.stringify(newExercise),
@@ -33,7 +33,7 @@ export const AddExercisePage = () => {
         <>
         <article>
             <h2>Add to the collection</h2>
-            <p>Add a new exercise to your collection for future reference and reflection.</p>
+            <p>Enter in a new exercise to your collection for tracking, as well as future reference and reflection.</p>
             <form onSubmit={(e) => { e.preventDefault();}}>
                 <fieldset>
                     <legend>Which exercise are you adding?</legend>
@@ -65,21 +65,26 @@ export const AddExercisePage = () => {
                         required="required" />
 
                     <label for="unit">Weight Unit</label>
-                    <input
-                        type="text"
+                    <select
                         value={unit}
-                        placeholder="kgs, lbs, miles, etc."
-                        onChange={e => setUnit(e.target.value)} 
-                        id="weight"
-                        required="required" />
+                        placeholder="Select weight unit"
+                        onChange={e => setUnit(e.target.value)}
+                        id="unit"
+                        required="required">
+                        
+                        <option value="lbs">lbs</option>
+                        <option value="kgs">kgs</option>
+                        <option value="miles">miles</option>
+                        <option value="kilometers">kilometers</option>
+                    </select>
 
-                    {/* <label for="date">Date</label>
+                    <label for="date">Date</label>
                     <input
                         type="date"
                         value={date}
                         onChange={e => setDate(e.target.value)} 
                         id="date"
-                        required="required" /> */}
+                        required="required" />
 
                     <label for="submit">
                     <button

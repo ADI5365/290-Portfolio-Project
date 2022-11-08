@@ -4,6 +4,7 @@ import Exercise from './Exercise';
 function ExerciseList({ exercises, onDelete, onEdit }) {
     return (
         <table id="exercises">
+            <caption>Exercise List</caption>
             <thead>
                 <tr>
                     <th>Name</th>
