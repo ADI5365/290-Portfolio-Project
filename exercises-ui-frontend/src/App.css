@@ -10,8 +10,9 @@
 /*  ----- Viewport ----- elements inherited by all remaining elements ----- */
 body {
   color: #1F72A6;
+  background-color: #BFBCBA;
   font-family: Dosis, sans-serif;
-  font-size: 10px;
+  font-size: 12pt;
   line-height: 1.4;
   margin: 0;
   padding: 0;
@@ -55,7 +56,7 @@ nav a {
 }
 
 nav a:hover {
-  background-color: #A9DDFC;
+  background-color: #74b4d8;
   color: black;
   cursor: pointer;
 }
@@ -67,7 +68,9 @@ header {
   color: #736E6E;
   text-align: center;
   font-size: 50px;
+  font-weight: 300;
   border: none;
+  padding: 0;
 }
 
 header p {
@@ -77,6 +80,7 @@ header p {
 
 main {
   color: #1F72A6;
+  background-color: none;
   border: none;
   padding: 25px;
   float: center;
@@ -89,6 +93,7 @@ footer {
   color: #736E6E;
   font-style: italic;
   position: fixed;
+  border: none;
 }
 
 footer p {
