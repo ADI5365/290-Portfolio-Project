@@ -67,10 +67,13 @@ export const AddExercisePage = () => {
                     <label for="unit">Weight Unit</label>
                     <select
                         value={unit}
-                        placeholder="Select weight unit"
                         onChange={e => setUnit(e.target.value)}
                         id="unit"
                         required="required">
+
+                        <option disabled={true} value=''>
+                            --Select your weight unit--
+                        </option>
                         
                         <option value="lbs">lbs</option>
                         <option value="kgs">kgs</option>
